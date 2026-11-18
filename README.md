@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# RYUKSAIDSO Solutions
 
-## Getting Started
+Marketing & pricing website for **RYUKSAIDSO Solutions** — the services arm of [ryuksaidso.online](https://ryuksaidso.online). Separate from the main SaaS site, this is where customers explore services and fixed-scope pricing.
 
-First, run the development server:
+**Live:** https://solutions.ryuksaidso.online
+
+## What's here
+
+| Route | Page |
+|---|---|
+| `/` | Home — services overview, process, why choose, CTA |
+| `/services` | All services with plan summaries |
+| `/services/websites` | Website Development — ₹15k / ₹30k / ₹45k |
+| `/services/mobile-apps` | Mobile App Development — ₹17k / ₹34k / ₹50k |
+| `/services/desktop-software` | Desktop Applications — ₹20k / ₹40k / ₹60k |
+| `/services/bots-servers` | Bots & Server Solutions — ₹10k / ₹15k / ₹20k |
+| `/services/ai-automation` | AI Agents & Automation — ₹20k / ₹40k / ₹70k |
+| `/pricing` | All five services' plans in one place |
+| `/contact` | Free consultation form (mailto) + direct contact details |
+
+Each service page includes: **3 pricing plans** (Basic / Medium "Most Popular" / Advanced), **Included in All Plans**, **types of projects we build**, **add-ons**, and **Why Choose Ryuksaidso?** — transcribed from the official pricing posters.
+
+## Stack
+
+- [Next.js 16](https://nextjs.org) (App Router) + React 19 + TypeScript
+- [Tailwind CSS v4](https://tailwindcss.com) — neon violet dark theme (`src/app/globals.css`)
+- [lucide-react](https://lucide.dev) icons
+- Fully static export-friendly (all routes prerendered), SEO: metadata, `sitemap.xml`, `robots.txt`
+
+## Develop
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # http://localhost:3000
+npm run build      # production build
+npm run start      # serve production build
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Content editing
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+All services, plans, add-ons and copy live in **`src/lib/data.ts`** — edit prices or features there and every page updates.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Brand
 
-## Learn More
+- Logo: `public/logo-r.png` (RYUKSAIDSO "R")
+- Theme: dark `#07050d` + neon violet `#a855f7`, matching ryuksaidso.online
+- Contact: ryuksaidso@gmail.com · +91 9149522458 · [ryuksaidso.online](https://ryuksaidso.online)
 
-To learn more about Next.js, take a look at the following resources:
+## Deploy
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Deployed on Vercel. To redeploy:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+vercel --prod
+```
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Custom domain `solutions.ryuksaidso.online` is attached in Vercel project settings.
